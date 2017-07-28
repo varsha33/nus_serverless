@@ -28,7 +28,8 @@ cd <openwhisk_home>
 
 # Install all required software
 cd tools/ubuntu-setup  //this is considering an Ubunutu operating system, for other operating system choose the setup file as required
-sudo ./all.sh  // all.sh consists of a combined, pre-written set of installation commands required for installing different modules
+
+sudo ./all.sh         // all.sh consists of a combined, pre-written set of installation commands required for installing     different modules
 
 ```
 
@@ -49,12 +50,12 @@ To setup Couch DB for Openwhisk.
 ```
 # These env variables can also altered manually at db_local.ini file
 
-export OW_DB=CouchDB
-export OW_DB_USERNAME=<your couchdb user>
-export OW_DB_PASSWORD=<your couchdb password>
-export OW_DB_PROTOCOL=<your couchdb protocol> (http is most commonly used)
-export OW_DB_HOST=<your couchdb host> 
-export OW_DB_PORT=<your couchdb port> (5984 is most commonly used)
+export OW_DB=CouchDB                                                       // to setup the database of openwhisk as couchdb
+export OW_DB_USERNAME=<your couchdb user>                                  // to setup CouchDB username
+export OW_DB_PASSWORD=<your couchdb password>                              // to setup CouchDB password
+export OW_DB_PROTOCOL=<your couchdb protocol> (http is most commonly used) // to setup CouchDB protocol
+export OW_DB_HOST=<your couchdb host>                                      // to setup CouchDB host
+export OW_DB_PORT=<your couchdb port> (5984 is most commonly used)         // to setup CouchDB port 
 
 ```
 
@@ -76,18 +77,17 @@ Build openwhisk using gradle
 
 ```
 cd <openwhisk_home>
-sudo ./gradlew distDocker 
-
+sudo ./gradlew distDocker  //this command builds the openwhisk using gradle 
 ```
 Setup the remaining containers
 
 ```
 cd ansible
-sudo ansible-playbook -i environments/local couchdb.yml
-sudo ansible-playbook -i environments/local initdb.yml
-sudo ansible-playbook -i environments/local wipe.yml
-sudo ansible-playbook -i environments/local apigateway.yml
-sudo ansible-playbook -i environments/local openwhisk.yml
+sudo ansible-playbook -i environments/local couchdb.yml        
+sudo ansible-playbook -i environments/local initdb.yml          
+sudo ansible-playbook -i environments/local wipe.yml 
+sudo ansible-playbook -i environments/local apigateway.yml     
+sudo ansible-playbook -i environments/local openwhisk.yml      
 sudo ansible-playbook -i environments/local postdeploy.yml
 
 ```
@@ -96,7 +96,7 @@ sudo ansible-playbook -i environments/local postdeploy.yml
 
 ```
 #To check whether all the containers is running 
-docker ps
+docker ps  
 ```
 
 The result should look like this:
