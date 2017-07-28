@@ -14,18 +14,21 @@ Serverless IOT Platform using OPENWHISK and MQTT
 
 * Native Deployment of Openwhisk in Ubuntu 14.04
 
-Download openwhisk from [here] (https://github.com/apache/incubator-openwhisk) and follow the instructions below for successful deployment.
+Download openwhisk from [here] (https://github.com/apache/incubator-openwhisk) and follow the instructions below for successful deployment or clone the repository using the below commands
 
 ```
 # Install git if it is not installed
 sudo apt-get install git -y
-
+git clone https://github.com/apache/incubator-openwhisk
+```
+After downloading openwhisk run the following commands to install the pre-requsite tools required for installation of openwhisk 
+```
 # Change current directory to <openwhisk_home>
 cd <openwhisk_home>
 
 # Install all required software
-cd tools/ubuntu-setup 
-sudo ./all.sh
+cd tools/ubuntu-setup  //this is considering an Ubunutu operating system, for other operating system choose the setup file as required
+sudo ./all.sh  // all.sh consists of a combined, pre-written set of installation commands required for installing different modules
 
 ```
 
